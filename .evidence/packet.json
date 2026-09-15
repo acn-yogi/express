@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "briefId": "reject-demo",
+    "approver": "yogi.aradhye",
+    "profile": "implementer",
+    "modelId": "claude-sonnet-5",
+    "turnsUsed": 1,
+    "costUsd": 0,
+    "endState": "failed: policy"
+  },
+  "diff": "",
+  "verify": {
+    "passed": false,
+    "attempts": []
+  },
+  "reproCommand": "cd \"C:\\code\\harness\\demo\\target\" && npm test",
+  "policyLog": [
+    {
+      "at": "2026-09-15T01:05:09.561Z",
+      "category": "command-allowlist",
+      "ruleId": "command-not-allowlisted",
+      "matched": "curl",
+      "allowed": false,
+      "haltTurn": true
+    }
+  ],
+  "budgetLog": [
+    {
+      "at": "2026-09-15T01:05:09.561Z",
+      "turn": 1,
+      "costUsd": 0,
+      "exhausted": false
+    }
+  ],
+  "generatedAt": "2026-09-15T01:05:09.712Z"
+}
