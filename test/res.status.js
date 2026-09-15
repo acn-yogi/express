@@ -153,6 +153,18 @@ describe('res', function () {
           .expect(500, /Invalid status code/, done);
       });
 
+      it('should raise error for a negative non-integer status code', function (done) {
+        var app = express();
+
+        app.use(function (req, res) {
+          res.status(-1.5).end();
+        });
+
+        request(app)
+          .get('/')
+          .expect(500, /Invalid status code/, done);
+      });
+
       it('should raise error for undefined status code', function (done) {
         var app = express();
 
